@@ -5,6 +5,8 @@
 	--cream: #000000;
 	--white: #030303;
 	--pink: #ff0077;
+	--gold: #f7c948;
+	--teal: #f7c948;
 	--line: #832c582c;
 }
 
@@ -39,10 +41,11 @@ a { color: inherit; text-decoration: none; }
 }
 
 .logo {
-	font-family: Arial, sans-serif;
-	font-size: 1.3rem;
-	font-weight: bold;
-	letter-spacing: 2px;
+	font-family: "Lucida Handwriting", "Brush Script MT", "Segoe Script", cursive;
+	font-size: 1.6rem;
+	font-style: italic;
+	font-weight: normal;
+	letter-spacing: 1px;
 }
 
 .logo span, h1 span, .contact h2 span { color: var(--teal); }
@@ -115,7 +118,18 @@ h1 {
 .scroll-note span { color: var(--teal); font-size: 1.2rem; margin-left: 8px; }
 
 .section-padding { padding: 110px 7%; }
-.about { background: var(--white); }
+.about {
+	background: #050505;
+	border-bottom: 4px solid var(--gold);
+	border-top: 4px solid var(--pink);
+}
+
+.about .section-heading {
+	border-left: 6px solid var(--gold);
+	padding-left: 24px;
+}
+
+.about .section-heading h2 { color: var(--gold); }
 
 .section-heading h2, .contact h2 {
 	font-size: clamp(2.3rem, 5vw, 4.5rem);
@@ -126,14 +140,24 @@ h1 {
 
 .about-content {
 	align-items: center;
+	background: #101010;
+	border: 1px solid var(--pink);
 	display: flex;
 	gap: 8%;
 	margin: 0 auto;
 	max-width: 1000px;
+	padding: 32px;
 }
 
-.about-content img { height: 300px; object-fit: cover; width: 300px; }
+.about-content img {
+	border: 6px solid var(--pink);
+	box-shadow: 10px 10px 0 var(--gold);
+	height: 300px;
+	object-fit: cover;
+	width: 300px;
+}
 .about-content div { color: var(--muted); max-width: 500px; }
+.about-content div p { color: var(--muted); }
 
 .text-link {
 	border-bottom: 1px solid var(--teal);
@@ -187,11 +211,31 @@ h1 {
 .project-card p:not(.project-number) { color: var(--muted); }
 .simple-project { border: 1px solid var(--line); }
 
-.contact { background: var(--ink); color: var(--white); text-align: center; }
-.contact .eyebrow { color: #6c1b4a; }
+.contact { background: var(--ink); color: var(--white); }
+.contact-content {
+	border: 1px solid var(--gold);
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 55px 7%;
+	text-align: center;
+}
+.contact .eyebrow { color: var(--gold); }
 .contact h2 { margin-bottom: 25px; }
 .contact-text { color: #f0f8f6; margin: 0 auto; max-width: 480px; }
+.contact-links { align-items: center; display: flex; flex-direction: column; }
 .light-button { background: var(--white); color: var(--ink); margin-top: 28px; }
+.social-links { display: flex; gap: 25px; margin-top: 30px; }
+.social-link {
+	border-bottom: 1px solid var(--gold);
+	color: var(--white);
+	font-family: Arial, sans-serif;
+	font-size: 0.78rem;
+	font-weight: bold;
+	padding-bottom: 5px;
+	text-transform: uppercase;
+}
+.social-link span { color: var(--gold); margin-left: 8px; }
+.social-link:hover { color: var(--gold); }
 
 footer {
 	background: var(--ink);
@@ -253,9 +297,11 @@ footer {
 	.hero { min-height: 100vh; padding-top: 190px; }
 	h1 { font-size: 4rem; }
 	.about-content, .project-list { align-items: stretch; flex-direction: column; }
+	.about-content { padding: 24px; }
 	.about-content img { height: auto; width: 100%; }
 	.skills-list { align-items: stretch; flex-direction: column; }
 	.simple-project { padding-top: 28px; }
+	.social-links { align-items: center; flex-direction: column; gap: 15px; }
 	.project-two-content { align-items: stretch; flex-direction: column; }
 	.project-two-content img { height: auto; width: 100%; }
 	footer { align-items: flex-start; flex-direction: column; gap: 4px; }
